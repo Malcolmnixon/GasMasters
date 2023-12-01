@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://4tp4fuxsn3ku"]
+
+[ext_resource type="PackedScene" uid="uid://dxefmv7xnntxh" path="res://addons/kaykit_space_base_bits/Assets/gltf/terrain_mining.gltf" id="1_mdc16"]
+[ext_resource type="Texture2D" uid="uid://cmnw2sn243xol" path="res://addons/kenney_particle_pack/smoke_07.png" id="2_hvugs"]
+
+[sub_resource type="Curve" id="Curve_0ahpu"]
+_data = [Vector2(0, 0.00988364), 0.0, 8.5155, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wao5y"]
+curve = SubResource("Curve_0ahpu")
+
+[sub_resource type="Curve" id="Curve_atnpc"]
+max_value = 2.0
+_data = [Vector2(0, 0.312209), 0.0, 10.1146, 0, 0, Vector2(1, 0.896512), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yjfyl"]
+curve = SubResource("Curve_atnpc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dgryi"]
+angle_max = 720.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, -6, 0)
+scale_curve = SubResource("CurveTexture_yjfyl")
+color = Color(0, 1, 0, 1)
+alpha_curve = SubResource("CurveTexture_wao5y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u73n"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_hvugs")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_pc34x"]
+material = SubResource("StandardMaterial3D_8u73n")
+
+[node name="GreenGasMine" type="Node3D"]
+
+[node name="terrain_mining2" parent="." instance=ExtResource("1_mdc16")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 16
+visibility_aabb = AABB(-2, 0, -2, 4, 5, 4)
+process_material = SubResource("ParticleProcessMaterial_dgryi")
+draw_pass_1 = SubResource("QuadMesh_pc34x")

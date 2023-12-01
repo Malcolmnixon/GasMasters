@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck4pcyvv813vx"]
+
+[ext_resource type="PackedScene" uid="uid://dw3l0v1n0litr" path="res://addons/kaykit_space_base_bits/Assets/gltf/windturbine_low.gltf" id="1_ftu1y"]
+
+[sub_resource type="GDScript" id="GDScript_0ftv4"]
+resource_name = "WindTurbineLow"
+script/source = "@tool
+extends Node3D
+
+
+## Fan speed
+@export var speed : float = 10.0
+
+
+# Fan node
+@onready var _fan : Node3D = $windturbine_low2/windturbine_low/windturbine_low_fan
+
+
+func _process(delta : float) -> void:
+	_fan.rotate_z(delta * speed)
+"
+
+[node name="WindTurbineLow" type="Node3D"]
+script = SubResource("GDScript_0ftv4")
+
+[node name="windturbine_low2" parent="." instance=ExtResource("1_ftu1y")]
+
+[editable path="windturbine_low2"]
