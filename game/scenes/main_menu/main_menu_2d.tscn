@@ -9,6 +9,7 @@ anchors_preset = 0
 offset_right = 400.0
 offset_bottom = 300.0
 script = ExtResource("1_i5s00")
+start_scene = "res://game/scenes/thompson_base/thompson_base.tscn"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1

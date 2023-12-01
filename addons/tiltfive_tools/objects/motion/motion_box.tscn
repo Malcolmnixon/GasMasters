@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b54wekshn3seb"]
+
+[ext_resource type="Script" path="res://addons/tiltfive_tools/objects/motion/motion_box.gd" id="1_lmk1c"]
+
+[node name="MotionBox" type="Node3D"]
+script = ExtResource("1_lmk1c")

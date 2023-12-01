@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgj8sj3kx3tgq"]
+[gd_scene load_steps=7 format=3 uid="uid://cgj8sj3kx3tgq"]
 
 [ext_resource type="PackedScene" uid="uid://d2gkfypplc1mt" path="res://addons/tiltfive_tools/staging/player.tscn" id="1_impou"]
 [ext_resource type="PackedScene" uid="uid://b1cd3jc00rhal" path="res://addons/tiltfive/assets/T5GlassesModel.tscn" id="2_vuyla"]
 [ext_resource type="PackedScene" uid="uid://fipea8dbocg4" path="res://addons/tiltfive/assets/T5WandModel.tscn" id="3_gqcbx"]
 [ext_resource type="PackedScene" uid="uid://bfxa4y4qa6l67" path="res://addons/tiltfive_tools/functions/pointer.tscn" id="4_3glue"]
 [ext_resource type="PackedScene" uid="uid://go1j5dbhtx3l" path="res://addons/tiltfive_tools/functions/board_scale.tscn" id="5_n82py"]
+[ext_resource type="PackedScene" uid="uid://cfnmvvab0tqql" path="res://addons/tiltfive_tools/functions/board_motion.tscn" id="6_52mig"]
 
 [node name="Player" instance=ExtResource("1_impou")]
 
@@ -17,7 +18,11 @@ gameboard_scale = 20.0
 
 [node name="Pointer" parent="Origin/Wand_1" index="1" instance=ExtResource("4_3glue")]
 length = 10.0
+arc_radius = 0.05
+target_radius = 0.1
 
 [node name="BoardScale" parent="Origin/Wand_1" index="2" instance=ExtResource("5_n82py")]
 zoom_min = 10.0
 zoom_max = 30.0
+
+[node name="BoardMotion" parent="Origin/Wand_1" index="3" instance=ExtResource("6_52mig")]

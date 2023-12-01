@@ -1,8 +1,12 @@
 extends Control
 
 
+## Start scene
+@export_file('*.tscn') var start_scene : String
+
+
 func _on_new_pressed():
-	pass # Replace with function body.
+	T5ToolsStaging.load_scene(start_scene)
 
 
 func _on_quit_pressed():

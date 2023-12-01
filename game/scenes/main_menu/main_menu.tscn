@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bryosxbm46r0h"]
+[gd_scene load_steps=11 format=3 uid="uid://bryosxbm46r0h"]
 
 [ext_resource type="PackedScene" uid="uid://dslrsg4cn04o4" path="res://addons/tiltfive_tools/staging/scene.tscn" id="1_r2yc1"]
 [ext_resource type="MeshLibrary" uid="uid://cfijgpk6k0vu6" path="res://addons/kaykit_space_base_bits/Assets/SpaceBaseLibrary.meshlib" id="2_1xxct"]
+[ext_resource type="PackedScene" uid="uid://b54wekshn3seb" path="res://addons/tiltfive_tools/objects/motion/motion_box.tscn" id="2_7e1b3"]
 [ext_resource type="PackedScene" uid="uid://4cv5ikpno44c" path="res://addons/kaykit_space_base_bits/Assets/scenes/red_gas_mine.tscn" id="3_oh6gi"]
 [ext_resource type="PackedScene" uid="uid://diop0tlalus1w" path="res://addons/kaykit_space_base_bits/Assets/scenes/wind_turbine_tall.tscn" id="3_xhhrf"]
 [ext_resource type="PackedScene" uid="uid://0l6uvyibyfq7" path="res://addons/tiltfive_tools/objects/viewport/viewport_2d_in_3d.tscn" id="5_60hod"]
 [ext_resource type="PackedScene" uid="uid://dycotj5ngf0uf" path="res://game/scenes/main_menu/main_menu_2d.tscn" id="6_ujyd4"]
+[ext_resource type="AudioStream" uid="uid://dcmnbv44v1q7r" path="res://assets/freepd.com/New Hero in Town.mp3" id="8_ypv1q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xdjq4"]
+size = Vector3(5, 1, 5)
 
 [sub_resource type="Environment" id="Environment_2xl40"]
 background_mode = 1
@@ -14,7 +19,12 @@ ambient_light_color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [node name="MainMenu" instance=ExtResource("1_r2yc1")]
 
-[node name="Terrain" type="GridMap" parent="." index="0"]
+[node name="Motion" parent="." index="0" instance=ExtResource("2_7e1b3")]
+shape = SubResource("BoxShape3D_xdjq4")
+
+[node name="Map" type="Node3D" parent="." index="1"]
+
+[node name="Terrain" type="GridMap" parent="Map" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 mesh_library = ExtResource("2_1xxct")
 cell_size = Vector3(4, 2, 4)
@@ -26,7 +36,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Decorations" type="GridMap" parent="." index="1"]
+[node name="Decorations" type="GridMap" parent="Map" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 mesh_library = ExtResource("2_1xxct")
 cell_size = Vector3(4, 2, 4)
@@ -38,23 +48,27 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+[node name="RedGasMine" parent="Map" index="2" instance=ExtResource("3_oh6gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -6, 4)
+
+[node name="WindTurbineTall" parent="Map" index="3" instance=ExtResource("3_xhhrf")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4, -4, -8)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map" index="4"]
 environment = SubResource("Environment_2xl40")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3"]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 0, 9, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map" index="5"]
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612373, 0, 9, 0)
 shadow_enabled = true
 shadow_bias = 0.01
 
-[node name="RedGasMine" parent="." index="4" instance=ExtResource("3_oh6gi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -6, 4)
-
-[node name="WindTurbineTall" parent="." index="5" instance=ExtResource("3_xhhrf")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4, -4, -8)
-
-[node name="Viewport2Din3D" parent="." index="6" instance=ExtResource("5_60hod")]
+[node name="Menu" parent="." index="2" instance=ExtResource("5_60hod")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)
 screen_size = Vector2(6, 4)
 scene = ExtResource("6_ujyd4")
 viewport_size = Vector2(400, 300)
 unshaded = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("8_ypv1q")
+autoplay = true

@@ -1,7 +1,31 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dghey0xsgq2pp"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dghey0xsgq2pp"]
 
 [ext_resource type="Texture2D" uid="uid://by38ghgpemefd" path="res://addons/kaykit_space_base_bits/Assets/textures/spacebits_texture.png" id="1_dstfv"]
+
+[sub_resource type="Gradient" id="Gradient_br334"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lv7hw"]
+gradient = SubResource("Gradient_br334")
+width = 16
+height = 16
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_widjj"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lhwrg"]
+width = 256
+height = 256
+seamless = true
+as_normal_map = true
+bump_strength = 4.0
+noise = SubResource("FastNoiseLite_widjj")
 
 [resource]
 albedo_texture = ExtResource("1_dstfv")
 metallic_specular = 0.2
+detail_enabled = true
+detail_blend_mode = 1
+detail_uv_layer = 1
+detail_albedo = SubResource("GradientTexture2D_lv7hw")
+detail_normal = SubResource("NoiseTexture2D_lhwrg")
+uv2_triplanar = true
