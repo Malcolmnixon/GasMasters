@@ -17,7 +17,7 @@ gameboard_scale = 20.0
 [node name="T5-wand" parent="Origin/Wand_1" index="0" instance=ExtResource("3_gqcbx")]
 
 [node name="Pointer" parent="Origin/Wand_1" index="1" instance=ExtResource("4_3glue")]
-length = 10.0
+length = 25.0
 arc_radius = 0.05
 target_radius = 0.1
 
