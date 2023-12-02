@@ -54,6 +54,20 @@ horizontal_alignment = 1
 [node name="HSeparator1" type="HSeparator" parent="MarginContainer/TabContainer/Construct"]
 layout_mode = 2
 
+[node name="CashLine" type="HBoxContainer" parent="MarginContainer/TabContainer/Construct"]
+layout_mode = 2
+
+[node name="CashLabel" type="Label" parent="MarginContainer/TabContainer/Construct/CashLine"]
+layout_mode = 2
+text = "Available cash"
+
+[node name="Cash" type="Label" parent="MarginContainer/TabContainer/Construct/CashLine"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "₡0"
+horizontal_alignment = 2
+
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TabContainer/Construct"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -64,6 +78,7 @@ size_flags_horizontal = 3
 columns = 3
 
 [node name="BuyMine" type="Button" parent="MarginContainer/TabContainer/Construct/ScrollContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Buy"
 
@@ -74,6 +89,7 @@ text = "Mine"
 horizontal_alignment = 1
 
 [node name="MinePrice" type="Label" parent="MarginContainer/TabContainer/Construct/ScrollContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "₡120"
 horizontal_alignment = 2
@@ -81,11 +97,11 @@ horizontal_alignment = 2
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Construct"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Construct"]
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/TabContainer/Construct"]
 layout_mode = 2
 alignment = 1
 
-[node name="Close" type="Button" parent="MarginContainer/TabContainer/Construct/HBoxContainer"]
+[node name="Close" type="Button" parent="MarginContainer/TabContainer/Construct/Buttons"]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "Close"
@@ -130,6 +146,6 @@ layout_mode = 2
 text = "No"
 
 [connection signal="pressed" from="MarginContainer/TabContainer/Construct/ScrollContainer/GridContainer/BuyMine" to="." method="_on_buy_mine_pressed"]
-[connection signal="pressed" from="MarginContainer/TabContainer/Construct/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Construct/Buttons/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="MarginContainer/TabContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="MarginContainer/TabContainer/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]

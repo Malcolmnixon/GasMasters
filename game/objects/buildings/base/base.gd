@@ -1,13 +1,9 @@
-class_name TurbineLow
 extends InteractableObject
 
 
-## Turbine Low UI
+## Base UI
 const UI : PackedScene = \
-	preload("res://game/objects/buildings/turbine_low/turbine_low_ui.tscn")
-
-## Turbine Low price
-const PRICE : int = 40
+	preload("res://game/objects/buildings/base/base_ui.tscn")
 
 
 # Handle pressed
@@ -22,10 +18,3 @@ func _on_pressed(event : T5ToolsPointerEvent) -> void:
 		self,
 		Vector3(0, 2, 0),
 		UI)
-
-
-# Interaction invoked
-func interaction(id : String) -> void:
-	match id:
-		"destroy":
-			queue_free()

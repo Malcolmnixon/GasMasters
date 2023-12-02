@@ -2,6 +2,14 @@ class_name MiningRig
 extends InteractableObject
 
 
+## Mining Rig UI
+const UI : PackedScene = \
+	preload("res://game/objects/buildings/mining_rig/mining_rig_ui.tscn")
+
+## Mining Rig price
+const PRICE : int = 140
+
+
 # Handle pressed
 func _on_pressed(event : T5ToolsPointerEvent) -> void:
 	# Get the player
@@ -13,7 +21,7 @@ func _on_pressed(event : T5ToolsPointerEvent) -> void:
 	player.show_interaction_ui(
 		self,
 		Vector3(0, 4, 0),
-		preload("res://game/objects/buildings/mining_rig/mining_rig_ui.tscn"))
+		UI)
 
 
 # Interaction invoked

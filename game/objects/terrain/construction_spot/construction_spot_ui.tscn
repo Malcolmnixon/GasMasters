@@ -54,6 +54,20 @@ horizontal_alignment = 1
 [node name="HSeparator1" type="HSeparator" parent="MarginContainer/TabContainer/Construct"]
 layout_mode = 2
 
+[node name="CashLine" type="HBoxContainer" parent="MarginContainer/TabContainer/Construct"]
+layout_mode = 2
+
+[node name="CashLabel" type="Label" parent="MarginContainer/TabContainer/Construct/CashLine"]
+layout_mode = 2
+text = "Available cash"
+
+[node name="Cash" type="Label" parent="MarginContainer/TabContainer/Construct/CashLine"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "₡0"
+horizontal_alignment = 2
+
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TabContainer/Construct"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -64,6 +78,7 @@ size_flags_horizontal = 3
 columns = 3
 
 [node name="BuyTurbineLow" type="Button" parent="MarginContainer/TabContainer/Construct/ScrollContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Buy"
 
@@ -74,11 +89,13 @@ text = "Turbine Low"
 horizontal_alignment = 1
 
 [node name="TurbineLowPrice" type="Label" parent="MarginContainer/TabContainer/Construct/ScrollContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "₡40"
 horizontal_alignment = 2
 
 [node name="BuyTurbineHigh" type="Button" parent="MarginContainer/TabContainer/Construct/ScrollContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Buy"
 
@@ -89,6 +106,7 @@ text = "Turbine High"
 horizontal_alignment = 1
 
 [node name="TurbineHighPrice" type="Label" parent="MarginContainer/TabContainer/Construct/ScrollContainer/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "₡100"
 horizontal_alignment = 2
