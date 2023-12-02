@@ -41,13 +41,22 @@ func _ready():
 	_camera = player.get_camera()
 	_origin = player.get_origin()
 
-	# Perform the initial facing
-	_target_transform(1.0)
+	# On visibility changes face the player
+	_target.visibility_changed.connect(_face_player)
+
+	# Face the player now
+	_face_player()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta : float) -> void:
 	_target_transform(rate * delta)
+
+
+# Face the player
+func _face_player() -> void:
+	# Perform the initial facing
+	_target_transform(1.0)
 
 
 # Update the target transform

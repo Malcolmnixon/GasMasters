@@ -1,4 +1,5 @@
 @tool
+class_name T5ToolsViewport2Din3D
 extends Node3D
 
 

@@ -1,16 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgj8sj3kx3tgq"]
+[gd_scene load_steps=12 format=3 uid="uid://cgj8sj3kx3tgq"]
 
 [ext_resource type="PackedScene" uid="uid://d2gkfypplc1mt" path="res://addons/tiltfive_tools/staging/player.tscn" id="1_impou"]
+[ext_resource type="Script" path="res://game/player/player.gd" id="2_ihl45"]
 [ext_resource type="PackedScene" uid="uid://b1cd3jc00rhal" path="res://addons/tiltfive/assets/T5GlassesModel.tscn" id="2_vuyla"]
 [ext_resource type="PackedScene" uid="uid://fipea8dbocg4" path="res://addons/tiltfive/assets/T5WandModel.tscn" id="3_gqcbx"]
 [ext_resource type="PackedScene" uid="uid://bfxa4y4qa6l67" path="res://addons/tiltfive_tools/functions/pointer.tscn" id="4_3glue"]
 [ext_resource type="PackedScene" uid="uid://go1j5dbhtx3l" path="res://addons/tiltfive_tools/functions/board_scale.tscn" id="5_n82py"]
 [ext_resource type="PackedScene" uid="uid://cfnmvvab0tqql" path="res://addons/tiltfive_tools/functions/board_motion.tscn" id="6_52mig"]
+[ext_resource type="PackedScene" uid="uid://0l6uvyibyfq7" path="res://addons/tiltfive_tools/objects/viewport/viewport_2d_in_3d.tscn" id="8_dn875"]
+[ext_resource type="Script" path="res://game/player/interaction_menu.gd" id="8_spok3"]
+[ext_resource type="PackedScene" uid="uid://c21g2ifqcqkij" path="res://addons/tiltfive_tools/functions/face_player.tscn" id="9_k1ca3"]
+[ext_resource type="PackedScene" uid="uid://dgirojuhamfat" path="res://game/player/interaction_menu_2d.tscn" id="10_u5ib8"]
 
 [node name="Player" instance=ExtResource("1_impou")]
+script = ExtResource("2_ihl45")
+visible_layers = null
 
 [node name="Origin" parent="." index="0"]
-gameboard_scale = 20.0
+gameboard_scale = 30.0
 
 [node name="T5-glasses" parent="Origin/Camera" index="0" instance=ExtResource("2_vuyla")]
 
@@ -22,7 +29,21 @@ arc_radius = 0.05
 target_radius = 0.1
 
 [node name="BoardScale" parent="Origin/Wand_1" index="2" instance=ExtResource("5_n82py")]
-zoom_min = 10.0
-zoom_max = 30.0
+zoom_min = 20.0
+zoom_max = 40.0
 
 [node name="BoardMotion" parent="Origin/Wand_1" index="3" instance=ExtResource("6_52mig")]
+
+[node name="InteractionMenu" type="Node3D" parent="." index="1"]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("8_spok3")
+
+[node name="Viewport2Din3D" parent="InteractionMenu" index="0" instance=ExtResource("8_dn875")]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.1, -0.0429055)
+screen_size = Vector2(0.1, 0.15)
+scene = ExtResource("10_u5ib8")
+viewport_size = Vector2(200, 300)
+unshaded = true
+
+[node name="FacePlayer" parent="InteractionMenu" index="1" instance=ExtResource("9_k1ca3")]

@@ -1,18 +1,37 @@
-extends StaticBody3D
+extends InteractableObject
 
 
-## Pointer event
-signal pointer_event(event : T5ToolsPointerEvent)
+const MINING_RIG = preload("res://game/objects/buildings/mining_rig.tscn")
 
 
-func _ready() -> void:
-	# Subscribe to pointer events
-	pointer_event.connect(_on_pointer_event)
+# Current construction
+var _construction : InteractableObject
 
 
-# Handle pointer event
-func _on_pointer_event(event : T5ToolsPointerEvent) -> void:
-	if event.event_type == T5ToolsPointerEvent.Type.ENTERED:
-		$HighlightMesh.visible = true
-	elif event.event_type == T5ToolsPointerEvent.Type.EXITED:
-		$HighlightMesh.visible = false
+# Handle pressed
+func _on_pressed(_event : T5ToolsPointerEvent) -> void:
+	# Get the player
+	var player := _event.player as Player
+	if not player:
+		return
+
+	# Show the interaction menu
+	player.show_interaction_menu(
+		self,
+		Vector3.ZERO,
+		"Mine",
+		[
+			{
+				id = "mine",
+				text = "Mine",
+				confirm = "Confirm Mining: ₡100"
+			}
+		])
+
+
+# Interaction invoked
+func interaction(id : String) -> void:
+	match id:
+		"mine":
+			_construction = MINING_RIG.instantiate()
+			add_child(_construction)

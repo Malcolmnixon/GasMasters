@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://dghey0xsgq2pp" path="res://addons/kaykit_space_base_bits/Assets/textures/spacebits_material.tres" id="1_3dpx1"]
 [ext_resource type="Script" path="res://game/objects/terrain/green_mining_spot.gd" id="1_b2mip"]
 [ext_resource type="Texture2D" uid="uid://cmnw2sn243xol" path="res://addons/kenney_particle_pack/smoke_07.png" id="2_lf014"]
+[ext_resource type="Material" uid="uid://g4yvu5wahbts" path="res://game/objects/highlight_material.tres" id="4_pfrir"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x5tsf"]
 points = PackedVector3Array(-2, -2, -2, 2, -2, -2, -2, -2, 2, -2, 1.9998, -2, 2, -2, 2, 2, 1.9998, -2, -2, 1.9998, 2, 0.0356305, 2.14506, -1.18598, 2, 1.9998, 2, 0.575959, 2.14506, -0.799922, -0.0430697, 2.07608, 1.29522, -0.67267, 2.07608, 0.845341)
@@ -80,13 +81,8 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_8vrvy"]
 material = SubResource("StandardMaterial3D_8u73n")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hr14"]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 1, 1, 0.25098)
-
 [sub_resource type="QuadMesh" id="QuadMesh_c0ehp"]
-material = SubResource("StandardMaterial3D_6hr14")
+material = ExtResource("4_pfrir")
 size = Vector2(3, 3)
 
 [node name="GreenMiningSpot" type="StaticBody3D"]
@@ -109,7 +105,7 @@ visibility_aabb = AABB(-2, 0, -2, 4, 5, 4)
 process_material = SubResource("ParticleProcessMaterial_ekxvk")
 draw_pass_1 = SubResource("QuadMesh_8vrvy")
 
-[node name="HighlightMesh" type="MeshInstance3D" parent="."]
+[node name="Highlight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.3, 0)
 visible = false
 mesh = SubResource("QuadMesh_c0ehp")
