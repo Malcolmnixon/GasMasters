@@ -2,13 +2,12 @@ class_name Player
 extends T5ToolsPlayer
 
 
-@onready var _interaction_menu : InteractionMenu = %InteractionMenu
+@onready var _container : InteractionUIContainer = %InteractionUIContainer
 
 
-func show_interaction_menu(
+func show_interaction_ui(
 	target : InteractableObject,
 	offset : Vector3,
-	title : String,
-	items : Array[Dictionary]) -> void:
+	ui : PackedScene) -> void:
 
-	_interaction_menu.show_menu(target, offset, title, items)
+	_container.show_ui(target, offset, ui)

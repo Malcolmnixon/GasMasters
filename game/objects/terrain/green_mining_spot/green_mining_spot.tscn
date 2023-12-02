@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://ci1nc8r4m84uf"]
 
 [ext_resource type="Material" uid="uid://dghey0xsgq2pp" path="res://addons/kaykit_space_base_bits/Assets/textures/spacebits_material.tres" id="1_3dpx1"]
-[ext_resource type="Script" path="res://game/objects/terrain/green_mining_spot.gd" id="1_b2mip"]
+[ext_resource type="Script" path="res://game/objects/terrain/green_mining_spot/green_mining_spot.gd" id="1_b2mip"]
 [ext_resource type="Texture2D" uid="uid://cmnw2sn243xol" path="res://addons/kenney_particle_pack/smoke_07.png" id="2_lf014"]
 [ext_resource type="Material" uid="uid://g4yvu5wahbts" path="res://game/objects/highlight_material.tres" id="4_pfrir"]
 

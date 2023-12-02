@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://df5e3kk570owp"]
 
-[ext_resource type="Script" path="res://game/objects/buildings/mining_rig.gd" id="1_pabaq"]
+[ext_resource type="Script" path="res://game/objects/buildings/mining_rig/mining_rig.gd" id="1_pabaq"]
 [ext_resource type="Material" uid="uid://dghey0xsgq2pp" path="res://addons/kaykit_space_base_bits/Assets/textures/spacebits_material.tres" id="2_towul"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dxu64"]
@@ -77,7 +77,7 @@ extends MeshInstance3D
 
 
 ## Drill speed
-@export var speed : float = 3.0
+@export var speed : float = 7.0
 
 
 func _process(delta : float) -> void:
@@ -96,7 +96,7 @@ mesh = SubResource("ArrayMesh_xpmt6")
 skeleton = NodePath("")
 
 [node name="drill_module" type="MeshInstance3D" parent="drill_structure"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+transform = Transform3D(-0.280187, 0, 0.959944, 0, 1, 0, -0.959944, 0, -0.280187, 0, 0.2, 0)
 mesh = SubResource("ArrayMesh_me5q6")
 skeleton = NodePath("")
 script = SubResource("GDScript_bd226")

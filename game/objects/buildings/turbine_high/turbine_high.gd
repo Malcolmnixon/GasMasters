@@ -1,4 +1,4 @@
-class_name TurbineLow
+class_name TurbineHigh
 extends InteractableObject
 
 
@@ -9,18 +9,11 @@ func _on_pressed(event : T5ToolsPointerEvent) -> void:
 	if not player:
 		return
 
-	# Show the interaction menu
-	player.show_interaction_menu(
+	# Show the UI
+	player.show_interaction_ui(
 		self,
-		Vector3(0, 2, 0),
-		"Modify",
-		[
-			{
-				id = "destroy",
-				text = "Destroy",
-				confirm = "Confirm Destroy"
-			}
-		])
+		Vector3(0, 4, 0),
+		preload("res://game/objects/buildings/turbine_high/turbine_high_ui.tscn"))
 
 
 # Interaction invoked

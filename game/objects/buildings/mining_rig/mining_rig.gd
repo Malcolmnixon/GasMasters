@@ -9,18 +9,11 @@ func _on_pressed(event : T5ToolsPointerEvent) -> void:
 	if not player:
 		return
 
-	# Show the interaction menu
-	player.show_interaction_menu(
+	# Show the ui
+	player.show_interaction_ui(
 		self,
 		Vector3(0, 4, 0),
-		"Modify",
-		[
-			{
-				id = "destroy",
-				text = "Destroy",
-				confirm = "Confirm Destroy"
-			}
-		])
+		preload("res://game/objects/buildings/mining_rig/mining_rig_ui.tscn"))
 
 
 # Interaction invoked

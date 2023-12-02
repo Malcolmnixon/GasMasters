@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dhnx2iph3sfol"]
 
 [ext_resource type="Material" uid="uid://dghey0xsgq2pp" path="res://addons/kaykit_space_base_bits/Assets/textures/spacebits_material.tres" id="1_q5hke"]
-[ext_resource type="Script" path="res://game/objects/buildings/turbine_high.gd" id="1_tq4vd"]
+[ext_resource type="Script" path="res://game/objects/buildings/turbine_high/turbine_high.gd" id="1_tq4vd"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0m01l"]
 points = PackedVector3Array(0.0295442, 1.03914, 0.269612, -0.113396, 0.0359483, -0.636481, -0.63648, 0.0359492, -0.113395, 0.656652, 0.00722279, 0.106093, -0.122958, 0.116635, 0.679899, 0.0535557, 1.03984, -0.258874, -0.279821, 1.01089, 0.0528754, 0.679899, 0.116635, -0.122958, -0.663535, 0.0124626, 0.105068, 0.110039, 0.116635, -0.692818, 0.220349, 1.01267, 0.196441, 0.106093, 0.00722288, 0.656652, -0.180487, 1.00075, -0.226975, 0.21645, 1.00528, -0.205873, -0.692818, 0.116635, -0.122958, -0.122958, 0.116635, -0.692818, -0.205862, 1.00526, 0.216438, -0.692818, 0.116635, 0.110039, 0.110039, 0.116635, 0.679899, 0.105068, 0.0124635, -0.663534, 0.679899, 0.116635, 0.110039, 0.107725, 1.16686, 0.107725, 0.289675, 1.0094, 0.0290667, -0.186475, 1.06314, -0.162432)
@@ -102,7 +102,7 @@ mesh = SubResource("ArrayMesh_vsn6s")
 skeleton = NodePath("")
 
 [node name="windturbine_tall_fan" type="MeshInstance3D" parent="windturbine_tall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.10001, 0)
+transform = Transform3D(-0.293886, 0.955841, 0, -0.955841, -0.293886, 0, 0, 0, 1, 0, 4.10001, 0)
 mesh = SubResource("ArrayMesh_qhfyj")
 skeleton = NodePath("")
 script = SubResource("GDScript_kuy3y")

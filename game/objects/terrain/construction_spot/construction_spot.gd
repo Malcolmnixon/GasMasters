@@ -1,8 +1,9 @@
 extends InteractableObject
 
 
-const TURBINE_LOW = preload("res://game/objects/buildings/turbine_low.tscn")
-const TURBINE_HIGH = preload("res://game/objects/buildings/turbine_high.tscn")
+const UI = preload("res://game/objects/terrain/construction_spot/construction_spot_ui.tscn")
+const TURBINE_LOW = preload("res://game/objects/buildings/turbine_low/turbine_low.tscn")
+const TURBINE_HIGH = preload("res://game/objects/buildings/turbine_high/turbine_high.tscn")
 
 
 # Current construction
@@ -21,40 +22,19 @@ func _on_pressed(event : T5ToolsPointerEvent) -> void:
 	if not player:
 		return
 
-	# Show the interaction menu
-	player.show_interaction_menu(
+	player.show_interaction_ui(
 		self,
 		Vector3.ZERO,
-		"Construct",
-		[
-			{
-				id = "lander",
-				text = "Lander",
-				confirm = "Confirm Landing Site"
-			},
-			{
-				id = "turbine_low",
-				text = "Turbine Low",
-				confirm = "Confirm Turbine Low: ₡40"
-			},
-			{
-				id = "turbine_high",
-				text = "Turbine High",
-				confirm = "Confirm Turbine Low: ₡100"
-			}
-		])
+		UI)
 
 
 # Interaction invoked
 func interaction(id : String) -> void:
 	match id:
-		"lander":
-			pass
-
-		"turbine_low":
+		"buy_turbine_low":
 			_construction = TURBINE_LOW.instantiate()
 			add_child(_construction)
 
-		"turbine_high":
+		"buy_turbine_high":
 			_construction = TURBINE_HIGH.instantiate()
 			add_child(_construction)
