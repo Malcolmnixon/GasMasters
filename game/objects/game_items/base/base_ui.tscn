@@ -46,16 +46,14 @@ layout_mode = 2
 [node name="StatusButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Status"
-alignment = 0
-
-[node name="ResourcesButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Resources"
-alignment = 0
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="HelpButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Help"
 
 [node name="CloseButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -108,27 +106,20 @@ text = "Power Usage"
 unique_name_in_owner = true
 layout_mode = 2
 text = "6 KWh"
+horizontal_alignment = 2
 
-[node name="Resources" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer"]
+[node name="Help" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/TabContainer/Resources"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Help"]
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 2
+text = "This base generates 20KWH of power from its onboard nuclear reactor.
 
-[node name="GreenGasLabel" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Resources/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Green Gas"
-
-[node name="GreenGas" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Resources/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0 M³"
-horizontal_alignment = 2
+Construct mining rigs on the gas vents to harvest gas for sale. Remember to make enough power generators to keep the rigs running, or your power grid will fail."
+autowrap_mode = 3
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StatusButton" to="." method="_on_status_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ResourcesButton" to="." method="_on_resources_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

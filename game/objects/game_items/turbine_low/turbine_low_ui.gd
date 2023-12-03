@@ -15,8 +15,8 @@ func _on_yes_pressed():
 
 
 func _on_no_pressed():
-	# Go back to status
-	%TabContainer.current_tab = 0
+	# Hide the UI
+	container.visible = false
 
 
 func _on_close_pressed():

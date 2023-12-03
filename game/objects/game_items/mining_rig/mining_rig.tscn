@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cqcabcdl15u7r" path="res://game/objects/game_items/game_item.tscn" id="1_34x78"]
 [ext_resource type="PackedScene" uid="uid://82p3is1oxkrk" path="res://game/objects/game_items/mining_rig/mining_rig_ui.tscn" id="2_gan8h"]
+[ext_resource type="Script" path="res://game/objects/game_items/mining_rig/mining_rig.gd" id="2_hkhja"]
 [ext_resource type="Material" uid="uid://dghey0xsgq2pp" path="res://addons/kaykit_space_base_bits/Assets/textures/spacebits_material.tres" id="2_towul"]
 [ext_resource type="Resource" uid="uid://njtyel18wbn6" path="res://game/objects/game_items/mining_rig/mining_rig_type.tres" id="3_d18ad"]
 [ext_resource type="PackedScene" uid="uid://qpc64ocl3upe" path="res://game/objects/modifiers/power_draw.tscn" id="4_1pv67"]
@@ -73,21 +74,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c2eqc")
 
-[sub_resource type="GDScript" id="GDScript_pv407"]
-resource_name = "Rotate"
-script/source = "@tool
-extends MeshInstance3D
-
-
-## Drill speed
-@export var speed : float = 7.0
-
-
-func _process(delta : float) -> void:
-	rotate_y(delta * speed)
-"
-
 [node name="MiningRig" instance=ExtResource("1_34x78")]
+script = ExtResource("2_hkhja")
+speed = 7.0
+gas_gathered = 0.0
 inspection_ui = ExtResource("2_gan8h")
 inspection_offset = Vector3(0, 4, 0)
 item_type = ExtResource("3_d18ad")
@@ -100,10 +90,9 @@ mesh = SubResource("ArrayMesh_u1ryg")
 skeleton = NodePath("")
 
 [node name="drill_module" type="MeshInstance3D" parent="drill_structure" index="0"]
-transform = Transform3D(0.761263, 0, 0.648326, 0, 1, 0, -0.648326, 0, 0.761263, 0, 0.2, 0)
+transform = Transform3D(0.954463, 0, 0.29556, 0, 1, 0, -0.29556, 0, 0.954463, 0, 0.2, 0)
 mesh = SubResource("ArrayMesh_4hsbf")
 skeleton = NodePath("")
-script = SubResource("GDScript_pv407")
 
 [node name="PowerDraw" parent="." index="2" instance=ExtResource("4_1pv67")]
 power_used = 20

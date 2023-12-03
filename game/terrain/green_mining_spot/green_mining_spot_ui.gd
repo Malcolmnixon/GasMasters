@@ -2,7 +2,7 @@ extends InspectionUI
 
 
 ## Mining rig price
-const MINING_RIG_PRICE : int = 140
+const MINING_RIG_PRICE : int = 200
 
 
 # Current action

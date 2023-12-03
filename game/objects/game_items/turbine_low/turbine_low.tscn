@@ -108,10 +108,10 @@ mesh = SubResource("ArrayMesh_vss2a")
 skeleton = NodePath("")
 
 [node name="windturbine_low_fan" type="MeshInstance3D" parent="windturbine_low" index="0"]
-transform = Transform3D(-0.915683, 0.401809, 0, -0.401809, -0.915683, 0, 0, 0, 1, -6.10352e-05, 1.77998, 0)
+transform = Transform3D(0.983337, 0.181586, 0, -0.181586, 0.983337, 0, 0, 0, 1, -6.10352e-05, 1.77998, 0)
 mesh = SubResource("ArrayMesh_5nks7")
 skeleton = NodePath("")
 script = SubResource("GDScript_r0wei")
 
 [node name="PowerGenerator" parent="." index="3" instance=ExtResource("4_3hlhj")]
-power_generation = 20
+power_generation = 10

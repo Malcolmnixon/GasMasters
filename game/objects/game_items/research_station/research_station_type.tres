@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="T5StateItemType" load_steps=2 format=3 uid="uid://ebvw2ayas82b"]
+
+[ext_resource type="Script" path="res://addons/tiltfive_state/state_item_type.gd" id="1_3fivt"]
+
+[resource]
+script = ExtResource("1_3fivt")
+type_id = "research_station_type"
+instance_scene = "res://game/objects/game_items/research_station/research_station.tscn"

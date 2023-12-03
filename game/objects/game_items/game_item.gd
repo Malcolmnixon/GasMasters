@@ -20,6 +20,9 @@ signal pointer_event(event : T5ToolsPointerEvent)
 # Highlight object
 var _highlight : Node3D
 
+# Game zone
+var _zone : GameZone
+
 
 # Subscribe to pointer events
 func _ready() -> void:
@@ -27,6 +30,11 @@ func _ready() -> void:
 	_highlight = find_child("Highlight")
 	if _highlight:
 		_highlight.visible = false
+
+	# Subscribe to game zone events
+	_zone = T5ToolsScene.get_current() as GameZone
+	if _zone:
+		_zone.zone_event.connect(_on_zone_event)
 
 	# Subscribe to pointer events
 	pointer_event.connect(_on_pointer_event)
@@ -91,6 +99,11 @@ func _load_item_state(state : Dictionary) -> void:
 func _save_item_state(state : Dictionary) -> void:
 	# Save the path to the parent	
 	state["parent"] = T5ToolsScene.get_current().get_path_to(get_parent())
+
+
+# Handle zone events
+func _on_zone_event(event : String) -> void:
+	pass
 
 
 # Find a child game item

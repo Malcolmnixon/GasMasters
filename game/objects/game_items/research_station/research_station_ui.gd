@@ -1,6 +1,25 @@
 extends InspectionUI
 
 
+var _update_delay : float = 1.0
+
+
+func _ready() -> void:
+	visibility_changed.connect(_update_gas_level)
+
+
+func _process(delta : float) -> void:
+	_update_delay -= delta
+	if _update_delay < 0.0:
+		_update_delay = 1.0
+		_update_gas_level()
+
+
+func _update_gas_level() -> void:
+	if is_instance_valid(item):
+		%RentLevel.value = item.shift_progress
+
+
 func _on_destroy_pressed():
 	# Show the confirmation
 	%TabContainer.current_tab = 1

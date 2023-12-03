@@ -5,9 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://b7gdyora6ikso" path="res://assets/freepd.com/The Desert.mp3" id="2_iyoqu"]
 [ext_resource type="MeshLibrary" uid="uid://cfijgpk6k0vu6" path="res://addons/kaykit_space_base_bits/Assets/SpaceBaseLibrary.meshlib" id="2_q88ef"]
 [ext_resource type="Resource" uid="uid://dbncp1shcub2d" path="res://game/scenes/thompson_base/thompson_base_zone.tres" id="2_ratdo"]
-[ext_resource type="PackedScene" uid="uid://b2bka716g4o0o" path="res://game/objects/terrain/construction_spot/construction_spot.tscn" id="4_2734j"]
-[ext_resource type="PackedScene" uid="uid://ci1nc8r4m84uf" path="res://game/objects/terrain/green_mining_spot/green_mining_spot.tscn" id="5_ja46t"]
-[ext_resource type="PackedScene" uid="uid://pxf3jhgkhr16" path="res://game/objects/buildings/base/base.tscn" id="6_66flf"]
+[ext_resource type="PackedScene" uid="uid://b2bka716g4o0o" path="res://game/terrain/construction_spot/construction_spot.tscn" id="4_2734j"]
+[ext_resource type="PackedScene" uid="uid://ci1nc8r4m84uf" path="res://game/terrain/green_mining_spot/green_mining_spot.tscn" id="5_ja46t"]
+[ext_resource type="PackedScene" uid="uid://pxf3jhgkhr16" path="res://game/objects/game_items/base/base.tscn" id="6_66flf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fa7op"]
 size = Vector3(60, 1, 60)
@@ -342,3 +342,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 [node name="Music" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("2_iyoqu")
 autoplay = true
+bus = &"Music"
