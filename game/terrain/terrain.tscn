@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c17bn7sjsml8j"]
+
+[ext_resource type="Script" path="res://game/terrain/terrain.gd" id="1_becy1"]
+
+[node name="Terrain" type="StaticBody3D"]
+collision_layer = 1048577
+script = ExtResource("1_becy1")

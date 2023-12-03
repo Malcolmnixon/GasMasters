@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://82p3is1oxkrk"]
+
+[ext_resource type="Script" path="res://game/objects/game_items/mining_rig/mining_rig_ui.gd" id="1_5ap6o"]
+[ext_resource type="Texture2D" uid="uid://crovglpkjvq4f" path="res://assets/ui/border.png" id="1_w67xj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onr1t"]
+
+[node name="MiningRigUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 180.0
+script = ExtResource("1_5ap6o")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w67xj")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_onr1t")
+current_tab = 1
+tabs_visible = false
+
+[node name="Status" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/TabContainer/Status"]
+layout_mode = 2
+text = "Mining Rig"
+horizontal_alignment = 1
+
+[node name="HSeparator1" type="HSeparator" parent="MarginContainer/TabContainer/Status"]
+layout_mode = 2
+
+[node name="Status" type="Label" parent="MarginContainer/TabContainer/Status"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Status"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/TabContainer/Status"]
+layout_mode = 2
+alignment = 1
+
+[node name="Close" type="Button" parent="MarginContainer/TabContainer/Status/Buttons"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "Close"
+
+[node name="Destroy" type="Button" parent="MarginContainer/TabContainer/Status/Buttons"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "Destroy"
+
+[node name="Destroy" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/TabContainer/Destroy"]
+layout_mode = 2
+text = "Confirm"
+horizontal_alignment = 1
+
+[node name="HSeparator1" type="HSeparator" parent="MarginContainer/TabContainer/Destroy"]
+layout_mode = 2
+
+[node name="Message" type="Label" parent="MarginContainer/TabContainer/Destroy"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Destroy the
+mining rig?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Destroy"]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/TabContainer/Destroy"]
+layout_mode = 2
+alignment = 1
+
+[node name="Yes" type="Button" parent="MarginContainer/TabContainer/Destroy/Buttons"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "Yes"
+
+[node name="No" type="Button" parent="MarginContainer/TabContainer/Destroy/Buttons"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "No"
+
+[connection signal="pressed" from="MarginContainer/TabContainer/Status/Buttons/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Status/Buttons/Destroy" to="." method="_on_destroy_pressed"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Destroy/Buttons/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Destroy/Buttons/No" to="." method="_on_no_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqcabcdl15u7r"]
+
+[ext_resource type="Script" path="res://game/objects/game_items/game_item.gd" id="1_gtdsl"]
+
+[node name="GameItem" type="StaticBody3D"]
+collision_layer = 1048577
+script = ExtResource("1_gtdsl")

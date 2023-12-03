@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="T5StateItemDatabase" load_steps=2 format=3 uid="uid://vvg7up07cusy"]
+[gd_resource type="Resource" script_class="T5StateItemDatabase" load_steps=6 format=3 uid="uid://vvg7up07cusy"]
 
+[ext_resource type="Resource" uid="uid://ci3r3yr5m2rrj" path="res://game/objects/game_items/base/base_type.tres" id="1_g8uto"]
 [ext_resource type="Script" path="res://addons/tiltfive_state/state_item_database.gd" id="1_q42d3"]
+[ext_resource type="Resource" uid="uid://njtyel18wbn6" path="res://game/objects/game_items/mining_rig/mining_rig_type.tres" id="2_y4nvu"]
+[ext_resource type="Resource" uid="uid://ci87c8v8etmhf" path="res://game/objects/game_items/turbine_high/turbine_high_type.tres" id="3_m7u4x"]
+[ext_resource type="Resource" uid="uid://xr55snv88sej" path="res://game/objects/game_items/turbine_low/turbine_low_type.tres" id="4_22va2"]
 
 [resource]
 script = ExtResource("1_q42d3")
-items = Array[Resource("res://addons/tiltfive_state/state_item_type.gd")]([])
+items = Array[Resource("res://addons/tiltfive_state/state_item_type.gd")]([ExtResource("1_g8uto"), ExtResource("2_y4nvu"), ExtResource("3_m7u4x"), ExtResource("4_22va2")])

@@ -26,6 +26,10 @@ GameState="*res://game/game_state.tscn"
 
 enabled=PackedStringArray("res://addons/tiltfive/plugin.cfg", "res://addons/tiltfive_tools/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [rendering]
 
 renderer/rendering_method="mobile"

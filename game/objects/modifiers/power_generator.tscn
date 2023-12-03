@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfha5f513la4p"]
+
+[ext_resource type="Script" path="res://game/objects/modifiers/power_generator.gd" id="1_ivrb1"]
+
+[node name="PowerGenerator" type="Node"]
+script = ExtResource("1_ivrb1")

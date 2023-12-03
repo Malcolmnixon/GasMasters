@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qpc64ocl3upe"]
+
+[ext_resource type="Script" path="res://game/objects/modifiers/power_draw.gd" id="1_08mvn"]
+
+[node name="PowerDraw" type="Node"]
+script = ExtResource("1_08mvn")

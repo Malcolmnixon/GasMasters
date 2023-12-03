@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="T5StateItemType" load_steps=2 format=3 uid="uid://ci87c8v8etmhf"]
+
+[ext_resource type="Script" path="res://addons/tiltfive_state/state_item_type.gd" id="1_kkorf"]
+
+[resource]
+script = ExtResource("1_kkorf")
+type_id = "turbine_high_type"
+instance_scene = "res://game/objects/game_items/turbine_high/turbine_high.tscn"

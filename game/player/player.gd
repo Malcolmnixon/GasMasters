@@ -2,11 +2,11 @@ class_name Player
 extends T5ToolsPlayer
 
 
-@onready var _container : InteractionUIContainer = %InteractionUIContainer
+@onready var _container : InspectionUIContainer = %InspectionUIContainer
 
 
-func show_interaction_ui(
-	target : InteractableObject,
+func show_inspection_ui(
+	target : Node3D,
 	offset : Vector3,
 	ui : PackedScene) -> void:
 

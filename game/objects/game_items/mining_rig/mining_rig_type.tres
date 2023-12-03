@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="T5StateItemType" load_steps=2 format=3 uid="uid://njtyel18wbn6"]
+
+[ext_resource type="Script" path="res://addons/tiltfive_state/state_item_type.gd" id="1_uspd6"]
+
+[resource]
+script = ExtResource("1_uspd6")
+type_id = "mining_rig_type"
+instance_scene = "res://game/objects/game_items/mining_rig/mining_rig.tscn"

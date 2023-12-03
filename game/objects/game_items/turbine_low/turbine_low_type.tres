@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="T5StateItemType" load_steps=2 format=3 uid="uid://xr55snv88sej"]
+
+[ext_resource type="Script" path="res://addons/tiltfive_state/state_item_type.gd" id="1_fbwi7"]
+
+[resource]
+script = ExtResource("1_fbwi7")
+type_id = "turbine_low_type"
+instance_scene = "res://game/objects/game_items/turbine_low/turbine_low.tscn"

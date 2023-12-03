@@ -57,6 +57,9 @@ func save_game() -> void:
 		push_error("Current game is not in a zone")
 		return
 
+	# Save all information about the zone
+	zone.save_state()
+
 	# Construct summary
 	var date := Time.get_datetime_dict_from_system()
 	var summary := {

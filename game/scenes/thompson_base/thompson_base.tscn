@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dl44tmdyub84x"]
 
-[ext_resource type="PackedScene" uid="uid://b2tiy1qbaen5i" path="res://addons/tiltfive_state/state_zone.tscn" id="1_vk52v"]
+[ext_resource type="PackedScene" uid="uid://c3ddhbb528fhk" path="res://game/scenes/game_zone.tscn" id="1_vk52v"]
 [ext_resource type="PackedScene" uid="uid://b54wekshn3seb" path="res://addons/tiltfive_tools/objects/motion/motion_box.tscn" id="2_0bowj"]
 [ext_resource type="AudioStream" uid="uid://b7gdyora6ikso" path="res://assets/freepd.com/The Desert.mp3" id="2_iyoqu"]
 [ext_resource type="MeshLibrary" uid="uid://cfijgpk6k0vu6" path="res://addons/kaykit_space_base_bits/Assets/SpaceBaseLibrary.meshlib" id="2_q88ef"]
