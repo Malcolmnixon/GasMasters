@@ -128,7 +128,7 @@ func _ready():
 	$StaticBody3D.connect("pointer_event", _on_pointer_event)
 
 	# Update enabled based on visibility
-	visibility_changed.connect(_update_enabled)
+	visibility_changed.connect(_on_visibility_changed)
 
 	# Apply physics properties
 	_update_screen_size()
@@ -243,6 +243,17 @@ func _process(delta):
 	else:
 		# This is no longer needed
 		set_process(false)
+
+
+# Handle visibility changed
+func _on_visibility_changed() -> void:
+	# Update enabled state
+	_update_enabled()
+
+	# Fire visibility changed in scene
+	if scene_node:
+		scene_node.propagate_notification(
+			CanvasItem.NOTIFICATION_VISIBILITY_CHANGED)
 
 
 ## Set screen size property

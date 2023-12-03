@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl44tmdyub84x"]
+[gd_scene load_steps=11 format=3 uid="uid://dl44tmdyub84x"]
 
-[ext_resource type="PackedScene" uid="uid://dslrsg4cn04o4" path="res://addons/tiltfive_tools/staging/scene.tscn" id="1_vk52v"]
+[ext_resource type="PackedScene" uid="uid://b2tiy1qbaen5i" path="res://addons/tiltfive_state/state_zone.tscn" id="1_vk52v"]
 [ext_resource type="PackedScene" uid="uid://b54wekshn3seb" path="res://addons/tiltfive_tools/objects/motion/motion_box.tscn" id="2_0bowj"]
 [ext_resource type="AudioStream" uid="uid://b7gdyora6ikso" path="res://assets/freepd.com/The Desert.mp3" id="2_iyoqu"]
 [ext_resource type="MeshLibrary" uid="uid://cfijgpk6k0vu6" path="res://addons/kaykit_space_base_bits/Assets/SpaceBaseLibrary.meshlib" id="2_q88ef"]
+[ext_resource type="Resource" uid="uid://dbncp1shcub2d" path="res://game/scenes/thompson_base/thompson_base_zone.tres" id="2_ratdo"]
 [ext_resource type="PackedScene" uid="uid://b2bka716g4o0o" path="res://game/objects/terrain/construction_spot/construction_spot.tscn" id="4_2734j"]
 [ext_resource type="PackedScene" uid="uid://ci1nc8r4m84uf" path="res://game/objects/terrain/green_mining_spot/green_mining_spot.tscn" id="5_ja46t"]
 [ext_resource type="PackedScene" uid="uid://pxf3jhgkhr16" path="res://game/objects/buildings/base/base.tscn" id="6_66flf"]
@@ -18,6 +19,7 @@ ambient_light_source = 2
 ambient_light_color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [node name="ThompsonBase" instance=ExtResource("1_vk52v")]
+zone_info = ExtResource("2_ratdo")
 
 [node name="MotionBox" parent="." index="0" instance=ExtResource("2_0bowj")]
 shape = SubResource("BoxShape3D_fa7op")

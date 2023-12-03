@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="T5StateZoneDatabase" load_steps=3 format=3 uid="uid://cdhrvgmjoo5xm"]
+
+[ext_resource type="Script" path="res://addons/tiltfive_state/state_zone_database.gd" id="1_3d3qg"]
+[ext_resource type="Resource" uid="uid://dbncp1shcub2d" path="res://game/scenes/thompson_base/thompson_base_zone.tres" id="2_w4gdf"]
+
+[resource]
+script = ExtResource("1_3d3qg")
+zones = Array[Resource("res://addons/tiltfive_state/state_zone_info.gd")]([ExtResource("2_w4gdf")])

@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp8dipoqqb4s3"]
+[gd_scene load_steps=5 format=3 uid="uid://dp8dipoqqb4s3"]
 
 [ext_resource type="Script" path="res://game/game_state.gd" id="1_evkp5"]
+[ext_resource type="Resource" uid="uid://cdhrvgmjoo5xm" path="res://game/scenes/zone_database.tres" id="2_0tsgv"]
+[ext_resource type="Resource" uid="uid://dbncp1shcub2d" path="res://game/scenes/thompson_base/thompson_base_zone.tres" id="2_hv0kr"]
+[ext_resource type="Resource" uid="uid://vvg7up07cusy" path="res://game/objects/item_database.tres" id="3_8t64d"]
 
 [node name="GameState" type="Node"]
 script = ExtResource("1_evkp5")
+game_start_zone = ExtResource("2_hv0kr")
+zone_database = ExtResource("2_0tsgv")
+item_database = ExtResource("3_8t64d")

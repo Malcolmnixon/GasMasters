@@ -7,7 +7,7 @@
 layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0
-offset_bottom = 300.0
+offset_bottom = 400.0
 script = ExtResource("1_i5s00")
 start_scene = "res://game/scenes/thompson_base/thompson_base.tscn"
 
@@ -43,12 +43,88 @@ layout_mode = 2
 layout_mode = 2
 text = "  Gas Masters"
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+[node name="HSeparator1" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Pick a game slot to play..."
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="Slots" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Slot1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Empty Slot 1"
+
+[node name="SlotNew" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot1"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "New"
+
+[node name="SlotLoad" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot1"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Load
+"
+
+[node name="Slot2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Empty Slot 2"
+
+[node name="SlotNew" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot2"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "New"
+
+[node name="SlotLoad" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot2"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Load
+"
+
+[node name="Slot3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SlotLabel" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Empty Slot 3"
+
+[node name="SlotNew" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot3"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "New"
+
+[node name="SlotLoad" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot3"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Load
+"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -57,17 +133,16 @@ layout_mode = 2
 layout_mode = 2
 alignment = 1
 
-[node name="New" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-text = "New"
-
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot1/SlotNew" to="." method="_on_slot_new_pressed" binds= ["slot1"]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot1/SlotLoad" to="." method="_on_slot_load_pressed" binds= ["slot1"]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot2/SlotNew" to="." method="_on_slot_new_pressed" binds= ["slot2"]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot2/SlotLoad" to="." method="_on_slot_load_pressed" binds= ["slot2"]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot3/SlotNew" to="." method="_on_slot_new_pressed" binds= ["slot3"]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/Slots/Slot3/SlotLoad" to="." method="_on_slot_load_pressed" binds= ["slot3"]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

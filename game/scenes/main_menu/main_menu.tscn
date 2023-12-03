@@ -63,10 +63,10 @@ shadow_enabled = true
 shadow_bias = 0.01
 
 [node name="Menu" parent="." index="2" instance=ExtResource("5_60hod")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)
-screen_size = Vector2(6, 4)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -2, -2)
+screen_size = Vector2(6, 6)
 scene = ExtResource("6_ujyd4")
-viewport_size = Vector2(400, 300)
+viewport_size = Vector2(400, 400)
 unshaded = true
 
 [node name="Music" type="AudioStreamPlayer" parent="." index="3"]

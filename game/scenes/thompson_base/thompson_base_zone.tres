@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="T5StateZoneInfo" load_steps=2 format=3 uid="uid://dbncp1shcub2d"]
+
+[ext_resource type="Script" path="res://addons/tiltfive_state/state_zone_info.gd" id="1_w1mns"]
+
+[resource]
+script = ExtResource("1_w1mns")
+zone_id = "thompson_base"
+instance_scene = "res://game/scenes/thompson_base/thompson_base.tscn"
