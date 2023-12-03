@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ddhbb528fhk"]
+
+[ext_resource type="PackedScene" uid="uid://b2tiy1qbaen5i" path="res://addons/tiltfive_state/state_zone.tscn" id="1_mxxtr"]
+[ext_resource type="Script" path="res://game/scenes/game_zone.gd" id="2_qfck8"]
+
+[node name="GameZone" instance=ExtResource("1_mxxtr")]
+script = ExtResource("2_qfck8")
